@@ -5,61 +5,63 @@
 @{
     ViewData["Title"] = "Edit";
 }
-
-<h1>Edit</h1>
-
-<h4>Product</h4>
-<hr />
+<h1>Edit Product</h1>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="ProductName" class="control-label"></label>
+                <label asp-for="ProductName" class="control-label">Product Name</label>
                 <input asp-for="ProductName" class="form-control" />
                 <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
+                <label asp-for="Price" class="control-label">Price</label>
                 <input asp-for="Price" class="form-control" />
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+                <label asp-for="Description" class="control-label">Description</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="imageUrl" class="control-label"></label>
+                <label asp-for="imageUrl" class="control-label">Image URL</label>
                 <input asp-for="imageUrl" class="form-control" />
                 <span asp-validation-for="imageUrl" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="color" class="control-label"></label>
+                <label asp-for="color" class="control-label">Color</label>
                 <input asp-for="color" class="form-control" />
                 <span asp-validation-for="color" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="size" class="control-label"></label>
+                <label asp-for="size" class="control-label">Size</label>
                 <input asp-for="size" class="form-control" />
                 <span asp-validation-for="size" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Informations" class="control-label"></label>
-                <input asp-for="Informations" class="form-control" />
+                <label asp-for="Informations" class="control-label">Informations</label>
+                <textarea asp-for="Informations" class="form-control"></textarea>
                 <span asp-validation-for="Informations" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-action="Index" class="btn btn-default">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
+
 
 
 

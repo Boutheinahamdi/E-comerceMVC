@@ -7,7 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace E_comerceMVC.Controllers
-{   [Authorize]
+{
+    [Authorize(Roles = "Manager")]
     public class RoleController : Controller
     {
         private RoleManager<IdentityRole> _roleManager;

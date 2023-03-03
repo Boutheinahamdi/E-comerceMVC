@@ -16,5 +16,6 @@ namespace E_comerceMVC.Data
 
         public DbSet<Product> products { get; set; }
         public DbSet<LignePanier> lignePaniers { get; set; }
+        public DbSet<Catgorie> catgories { get; set; }
     }
 }

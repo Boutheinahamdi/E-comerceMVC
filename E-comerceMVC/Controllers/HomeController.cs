@@ -35,6 +35,12 @@ namespace E_comerceMVC.Controllers
             return View(categorieView);
 
         }
+        public IActionResult Cart()
+        {
+            
+            return View();
+
+        }
         public IActionResult Details(int id)
         {
 

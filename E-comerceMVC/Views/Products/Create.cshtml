@@ -2,61 +2,58 @@
 @{
     ViewData["Title"] = "Create";
 }
-<div class=" style=" margin:160px; padding:120px"">
-    <h1 style="color:darkblue">Create New Product</h1>
-
-
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">Create New Product</h1>
             <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
                 <div class="form-group">
-                    <label asp-for="ProductName" class="control-label"></label>
+                    <label asp-for="ProductName" class="control-label">Product Name</label>
                     <input asp-for="ProductName" class="form-control" />
-                    <span asp-validation-for="ProductName" class="text-danger"></span>
+                    <<span asp-validation-for="ProductName" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Price" class="control-label"></label>
+                    <label asp-for="Price" class="control-label">Price</label>
                     <input asp-for="Price" class="form-control" />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Description" class="control-label"></label>
-                    <input asp-for="Description" class="form-control" />
+                    <label asp-for="Description" class="control-label">Description</label>
+                    <textarea asp-for="Description" class="form-control"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="imageUrl" class="control-label"></label>
+                    <label asp-for="imageUrl" class="control-label">Image URL</label>
                     <input asp-for="imageUrl" class="form-control" />
                     <span asp-validation-for="imageUrl" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="color" class="control-label"></label>
+                    <label asp-for="color" class="control-label">Color</label>
                     <input asp-for="color" class="form-control" />
                     <span asp-validation-for="color" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="size" class="control-label"></label>
+                    <label asp-for="size" class="control-label">Size</label>
                     <input asp-for="size" class="form-control" />
                     <span asp-validation-for="size" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Informations" class="control-label"></label>
-                    <input asp-for="Informations" class="form-control" />
+                    <label asp-for="Informations" class="control-label">Information</label>
+                    <textarea asp-for="Informations" class="form-control"></textarea>
                     <span asp-validation-for="Informations" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <button type="submit" class="btn btn-primary btn-block">Create</button>
                 </div>
             </form>
+            <div class="mt-3 text-center">
+                <a asp-action="Index" class="btn btn-link">Back to List</a>
+            </div>
         </div>
     </div>
-
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
 </div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

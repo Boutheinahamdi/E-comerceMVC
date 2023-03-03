@@ -1,6 +1,10 @@
-﻿@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+﻿
+
+@model IEnumerable<Microsoft.AspNetCore.Identity.IdentityRole>
+
 <h1>    liste des roles</h1>
-<a asp-action="CreateRole">Create role</a>
+<br />
+
 <table class=" table table-striped table-bordered">
     <thead>
         <tr>
@@ -22,3 +26,5 @@
     </tbody>
 
 </table>
+<br />
+<a asp-action="CreateRole" class="btn btn-primary" >Create Role</a>

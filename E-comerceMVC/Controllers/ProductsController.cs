@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using E_comerceMVC.Data;
 using E_comerceMVC.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace E_comerceMVC.Controllers
 {
+    
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -44,6 +46,8 @@ namespace E_comerceMVC.Controllers
         }
 
         // GET: Products/Create
+        [Authorize(Roles = "Admin")]
+
         public IActionResult Create()
         {
             return View();
@@ -54,6 +58,8 @@ namespace E_comerceMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Create([Bind("Id,ProductName,Price,Description,imageUrl,color,size,Informations")] Product product)
         {
             if (ModelState.IsValid)
@@ -64,6 +70,7 @@ namespace E_comerceMVC.Controllers
             }
             return View(product);
         }
+        [Authorize(Roles = "Admin")]
 
         // GET: Products/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -80,6 +87,7 @@ namespace E_comerceMVC.Controllers
             }
             return View(product);
         }
+        [Authorize(Roles = "Admin")]
 
         // POST: Products/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -115,6 +123,7 @@ namespace E_comerceMVC.Controllers
             }
             return View(product);
         }
+        [Authorize(Roles = "Admin")]
 
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int? id)
@@ -133,6 +142,7 @@ namespace E_comerceMVC.Controllers
 
             return View(product);
         }
+        [Authorize(Roles = "Admin")]
 
         // POST: Products/Delete/5
         [HttpPost, ActionName("Delete")]
